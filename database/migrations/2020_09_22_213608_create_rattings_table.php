@@ -20,7 +20,7 @@ class CreateRattingsTable extends Migration
             $table->integer('halls_id');
             $table->string('person_name');
             $table->string('person_email');
-            $table->string('person_review');
+            $table->longText('person_review');
             $table->softDeletes();
             $table->timestamps();
         });

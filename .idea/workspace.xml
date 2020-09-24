@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ade89793-7c0d-482d-8be5-0f6c4537e4ad" name="Default Changelist" comment="">
+    <list default="true" id="ade89793-7c0d-482d-8be5-0f6c4537e4ad" name="Default Changelist" comment="24/09/2020 6:50">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_22_213608_create_rattings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_22_213608_create_rattings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,8 +164,17 @@
       <option name="presentableId" value="Default" />
       <updated>1600786425662</updated>
       <workItem from="1600786427279" duration="20691000" />
-      <workItem from="1600872604881" duration="22241000" />
+      <workItem from="1600872604881" duration="23088000" />
+      <workItem from="1600985191767" duration="892000" />
     </task>
+    <task id="LOCAL-00001" summary="24/09/2020 6:50">
+      <created>1600955425733</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1600955425733</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -173,22 +184,25 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
+    <MESSAGE value="24/09/2020 6:50" />
+    <option name="LAST_COMMIT_MESSAGE" value="24/09/2020 6:50" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600948561944">
-      <screen x="0" y="23" width="1680" height="981" />
+    <state x="484" y="270" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600985324349">
+      <screen x="0" y="0" width="1680" height="1050" />
     </state>
     <state x="332" y="527" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600942106346" />
-    <state x="484" y="270" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600885988778" />
+    <state x="484" y="270" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600985324349" />
     <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.981@0.23.1680.981" timestamp="1600948561944" />
     <state x="364" y="957" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1600934154496">
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
     <state x="364" y="957" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600934154496" />
-    <state x="453" y="928" key="Github.ShareDialog" timestamp="1600945176497">
+    <state x="453" y="928" key="Github.ShareDialog" timestamp="1600955232467">
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
     <state x="453" y="928" key="Github.ShareDialog/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600945176497" />
+    <state x="453" y="928" key="Github.ShareDialog/0.0.1152.2048/1152.135.2048.1129@0.0.1152.2048" timestamp="1600955232467" />
     <state x="319" y="736" key="Github.UntrackedFilesDialog" timestamp="1600945204726">
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
@@ -201,6 +215,10 @@
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
     <state x="85" y="663" key="SettingsEditor/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600945536966" />
+    <state x="176" y="764" key="Vcs.Push.Dialog.v2" timestamp="1600955444795">
+      <screen x="0" y="0" width="1152" height="2048" />
+    </state>
+    <state x="176" y="764" key="Vcs.Push.Dialog.v2/0.0.1152.2048/1152.135.2048.1129@0.0.1152.2048" timestamp="1600955444795" />
     <state x="658" y="204" width="604" height="735" key="find.popup" timestamp="1600857004709">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
