@@ -47,7 +47,8 @@ class Hall extends Controller
     public function show($id)
     {
         //
-        $hall = \App\Models\hall::firstorfail($id)->with(['photos','venuetype','city','ammenties','rattings','menu'])->get();
+        $hall = \App\Models\hall::find($id)->with(['photos','venuetype','city','ammenties','rattings',])->get();
+
         $ratting =  \App\Models\Ratting::where([['halls_id','=',$id],])->selectRaw('SUM(value)/COUNT(halls_id) AS avg_rating')->first()->avg_rating;
         $rattingfnf =  number_format((float)$ratting, 1, '.', '');
         $ratting_1 = 0;
@@ -89,21 +90,32 @@ class Hall extends Controller
 
           }
             }
+
         //($ratting_1/array_sum($hall[0]->rattings))*100;
         //return   ($ratting_2/count($hall[0]->rattings))*100;
-       return view('frontend.detail',['data'=>$hall,'rattings' => [
-           'ratting_round_off'=>round($rattingfnf,0),'ratting'=>$rattingfnf ,
-           'ratting_percentage_1star' =>($ratting_1/count($hall[0]->rattings))*100,
-           'ratting_percentage_2star' =>($ratting_2/count($hall[0]->rattings))*100,
-           'ratting_percentage_3star' =>($ratting_3/count($hall[0]->rattings))*100,
-           'ratting_percentage_4star' =>($ratting_4/count($hall[0]->rattings))*100,
-           'ratting_percentage_5star' =>($ratting_5/count($hall[0]->rattings))*100
+        if($rattingfnf > 0) {
+            return view('frontend.detail',['data'=>$hall,'rattings' => [
+                'ratting_round_off'=>round($rattingfnf,0),'ratting'=>$rattingfnf ,
+                'ratting_percentage_1star' =>($ratting_1/count($hall[0]->rattings))*100,
+                'ratting_percentage_2star' =>($ratting_2/count($hall[0]->rattings))*100,
+                'ratting_percentage_3star' =>($ratting_3/count($hall[0]->rattings))*100,
+                'ratting_percentage_4star' =>($ratting_4/count($hall[0]->rattings))*100,
+                'ratting_percentage_5star' =>($ratting_5/count($hall[0]->rattings))*100
+            ]
+            ]);
+        }
+        else {
+            return view('frontend.detail',['data'=>$hall,'rattings' => [
+                'ratting_round_off'=>round($rattingfnf,0),'ratting'=>$rattingfnf ,
+                'ratting_percentage_1star' =>0,
+                'ratting_percentage_2star' =>0,
+                'ratting_percentage_3star' =>0,
+                'ratting_percentage_4star' =>0,
+                'ratting_percentage_5star' =>0
+            ]
+            ]);
+        }
 
-
-
-
-       ]
-       ]);
     }
 
     /**

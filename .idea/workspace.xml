@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ade89793-7c0d-482d-8be5-0f6c4537e4ad" name="Default Changelist" comment="" />
+    <list default="true" id="ade89793-7c0d-482d-8be5-0f6c4537e4ad" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,6 +12,9 @@
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -123,6 +128,7 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1hs4NK30K0Er5ENElVJpKJFdXzT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -132,7 +138,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -156,20 +162,25 @@
       <option name="presentableId" value="Default" />
       <updated>1600786425662</updated>
       <workItem from="1600786427279" duration="20691000" />
-      <workItem from="1600872604881" duration="17548000" />
+      <workItem from="1600872604881" duration="22241000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+  </component>
   <component name="WindowStateProjectService">
-    <state x="332" y="527" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600942106346">
-      <screen x="0" y="0" width="1152" height="2048" />
+    <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600948561944">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="332" y="527" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600942106346" />
     <state x="484" y="270" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600885988778" />
-    <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.981@0.23.1680.981" timestamp="1600811719589" />
+    <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.981@0.23.1680.981" timestamp="1600948561944" />
     <state x="364" y="957" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1600934154496">
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
@@ -178,14 +189,18 @@
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
     <state x="453" y="928" key="Github.ShareDialog/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600945176497" />
+    <state x="319" y="736" key="Github.UntrackedFilesDialog" timestamp="1600945204726">
+      <screen x="0" y="0" width="1152" height="2048" />
+    </state>
+    <state x="319" y="736" key="Github.UntrackedFilesDialog/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600945204726" />
     <state x="782" y="534" key="NewPhpFileDialog" timestamp="1600867373564">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="782" y="534" key="NewPhpFileDialog/0.23.1680.981@0.23.1680.981" timestamp="1600867373564" />
-    <state x="85" y="663" key="SettingsEditor" timestamp="1600939831050">
+    <state x="85" y="663" key="SettingsEditor" timestamp="1600945536966">
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
-    <state x="85" y="663" key="SettingsEditor/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600939831050" />
+    <state x="85" y="663" key="SettingsEditor/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600945536966" />
     <state x="658" y="204" width="604" height="735" key="find.popup" timestamp="1600857004709">
       <screen x="0" y="23" width="1680" height="981" />
     </state>

@@ -73,13 +73,13 @@
                         <table class="table table-striped add_bottom_45">
                             <tbody>
                             <tr>
-                                <td>Price per guest</td>
+                                <td>Price per person</td>
                                 <td>{{$data[0]['price_per_guest']}} RS</td>
                             </tr>
-                            <tr>
-                                <td>Price per menu</td>
-                                <td>{{$data[0]['menu']->per_head_rate}} RS</td>
-                            </tr>
+{{--                            <tr>--}}
+{{--                                <td>Price per menu</td>--}}
+{{--                                <td>{{$data[0]['menu']->per_head_rate}} RS</td>--}}
+{{--                            </tr>--}}
                             <tr>
                                 <td>Capacity</td>
                                 <td>{{$data[0]['guest_range']}} Persons</td>
@@ -89,8 +89,8 @@
                         </table>
                         <hr>
                         <h3>Location</h3>
-                        <div id="map" class="map map_single add_bottom_45">
-
+                        <div  class="map map_single add_bottom_45">
+                            <iframe src="https://maps.google.com/maps?q={{$data[0]['address']}}&output=embed" width="100%" height="100%" frameborder="5" style="border:0"></iframe>
 
                         </div>
                         <!-- End Map -->
@@ -159,60 +159,60 @@
                             <!-- /row -->
                         </div>
 
-{{--                        <div class="reviews-container">--}}
+                        <div class="reviews-container col-12" >
 
-{{--                            <div class="review-box clearfix">--}}
+                            <div class="review-box clearfix ">
 
-{{--                                <div class="rev-content">--}}
-{{--                                    <div class="rating">--}}
-{{--                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rev-info">--}}
-{{--                                        Admin – April 03, 2016:--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rev-text">--}}
-{{--                                        <p>--}}
-{{--                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis--}}
-{{--                                        </p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- /review-box -->--}}
-{{--                            <div class="review-box clearfix">--}}
+                                <div class="rev-content">
+                                    <div class="rating">
+                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+                                    </div>
+                                    <div class="rev-info">
+                                        Admin – April 03, 2016:
+                                    </div>
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /review-box -->
+                            <div class="review-box clearfix">
 
-{{--                                <div class="rev-content">--}}
-{{--                                    <div class="rating">--}}
-{{--                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rev-info">--}}
-{{--                                        Ahsan – April 01, 2016:--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rev-text">--}}
-{{--                                        <p>--}}
-{{--                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis--}}
-{{--                                        </p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- /review-box -->--}}
-{{--                            <div class="review-box clearfix">--}}
-{{--                              --}}
-{{--                                <div class="rev-content">--}}
-{{--                                    <div class="rating">--}}
-{{--                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rev-info">--}}
-{{--                                        Sara – March 31, 2016:--}}
-{{--                                    </div>--}}
-{{--                                    <div class="rev-text">--}}
-{{--                                        <p>--}}
-{{--                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis--}}
-{{--                                        </p>--}}
-{{--                                    </div>--}}
-{{--                                </div>--}}
-{{--                            </div>--}}
-{{--                            <!-- /review-box -->--}}
-{{--                        </div>--}}
+                                <div class="rev-content">
+                                    <div class="rating">
+                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+                                    </div>
+                                    <div class="rev-info">
+                                        Ahsan – April 01, 2016:
+                                    </div>
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /review-box -->
+                            <div class="review-box clearfix">
+
+                                <div class="rev-content">
+                                    <div class="rating">
+                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
+                                    </div>
+                                    <div class="rev-info">
+                                        Sara – March 31, 2016:
+                                    </div>
+                                    <div class="rev-text">
+                                        <p>
+                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /review-box -->
+                        </div>
                         <!-- /review-container -->
                     </section>
                     <!-- /section -->

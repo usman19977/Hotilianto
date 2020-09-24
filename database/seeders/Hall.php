@@ -16,24 +16,14 @@ class Hall extends Seeder
     {
         //
         DB::table('halls')->insert([
-            [   'name' => 'Daffodils Lawn',
-                'address' => 'Jinnah Ave, Model Colony Tina Square, Karachi, Karachi City, Sindh',
-                'guest_range' => 100,
-                'price_per_guest' => 1000,
-                'details' => '',
-                'status' => 1,
-                'user_id' => 2,
-                'city_id' => 10,
-                'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 2
-            ],
+
             [   'name' => 'Lahore Grande Banquet Hall',
                 'address' => 'Zafar Ali Rd, Gulberg V, Lahore, Punjab',
                 'guest_range' => 100,
                 'price_per_guest' => 1000,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 3,
+                'user_id' => 2,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 1
@@ -44,7 +34,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1100,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 4,
+                'user_id' => 3,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 1
@@ -55,7 +45,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1200,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 5,
+                'user_id' => 4,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 2
@@ -66,7 +56,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1400,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 6,
+                'user_id' => 5,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 2
@@ -77,7 +67,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1500,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 7,
+                'user_id' => 6,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 3
@@ -88,7 +78,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1600,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 8,
+                'user_id' => 7,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 3
@@ -99,7 +89,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1700,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 9,
+                'user_id' => 8,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 4
@@ -110,7 +100,7 @@ class Hall extends Seeder
                 'price_per_guest' => 800,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 10,
+                'user_id' => 9,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 4
@@ -121,7 +111,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1800,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 11,
+                'user_id' => 10,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 5
@@ -132,7 +122,7 @@ class Hall extends Seeder
                 'price_per_guest' => 1000,
                 'details' => '',
                 'status' => 1,
-                'user_id' => 12,
+                'user_id' => 11,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
                 'venuetype_id' => 5

@@ -12,9 +12,7 @@ class hall extends Model
     protected $dates = ['deleted_at'];
 
 
-    public function menu(){
-      return $this->hasMany('App\Models\Menu','halls_id','id');
-    }
+
     public function city(){
         return $this->hasOne('App\Models\Cities','id','city_id');
     }

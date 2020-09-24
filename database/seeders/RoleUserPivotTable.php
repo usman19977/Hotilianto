@@ -64,10 +64,7 @@ class RoleUserPivotTable extends Seeder
                 'role_id'=>2,
                 'created_at' => '2020-09-22 00:00:00'
             ],
-            [   'user_id' =>12,
-                'role_id'=>2,
-                'created_at' => '2020-09-22 00:00:00'
-            ],
+
 
             [   'user_id' =>13,
                 'role_id'=>3,

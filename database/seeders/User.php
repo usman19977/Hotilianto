@@ -25,14 +25,6 @@ class User extends Seeder
                 'role_id'=>1
             ],
 
-            [   'name' => 'Daffodils Manager',
-                'email'  => 'daffodils_manager@manager.com',
-                'cnic' => 4444,
-                'mobile_number' => 33333,
-                'password' => bcrypt('123456'),
-                'created_at' => '2020-09-22 00:00:00',
-                'role_id'=>2
-            ],
 
             [   'name' => 'Lahore Grande Banquet Hall Manager',
                 'email'  => 'lahoregrandebanquethall@manager.com',

@@ -23,6 +23,7 @@ class DatabaseSeeder extends Seeder
         $this->call(VenueType::class);
         $this->call(City::class);
         $this->call(Hall::class);
+        $this->call(Photo::class);
 
 
     }
