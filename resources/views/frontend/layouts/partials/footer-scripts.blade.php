@@ -1,7 +1,6 @@
 
 <!-- Map -->
-<script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAgI03_4XvqP9TOZcKHEYOZ53iQS3V5Ixo"></script>
-
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="{{ asset('js/map_single_hotel.js') }}"></script>
 <script src="{{ asset('js/infobox.js') }}"></script>
 <script src="{{ asset('js/common_scripts.js') }}"></script>

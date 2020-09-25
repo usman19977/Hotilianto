@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
         $this->call(Photo::class);
 
         $this->call(Ratting::class);
+        $this->call(Ammenties::class);
 
     }
 }

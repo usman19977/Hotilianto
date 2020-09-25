@@ -1,10 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:firstorigin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="ade89793-7c0d-482d-8be5-0f6c4537e4ad" name="Default Changelist" comment="24/09/2020 6:50">
+    <list default="true" id="ade89793-7c0d-482d-8be5-0f6c4537e4ad" name="Default Changelist" comment="RattingSeeder">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_09_22_213608_create_rattings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_09_22_213608_create_rattings_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Ratting.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Ratting.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/detail.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/detail.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer-scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/layouts/partials/footer-scripts.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,7 +186,7 @@
       <updated>1600786425662</updated>
       <workItem from="1600786427279" duration="20691000" />
       <workItem from="1600872604881" duration="23088000" />
-      <workItem from="1600985191767" duration="892000" />
+      <workItem from="1600985191767" duration="3883000" />
     </task>
     <task id="LOCAL-00001" summary="24/09/2020 6:50">
       <created>1600955425733</created>
@@ -174,26 +195,45 @@
       <option name="project" value="LOCAL" />
       <updated>1600955425733</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="RattingSeeder">
+      <created>1600986111877</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1600986111877</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$" />
     </ignored-roots>
     <MESSAGE value="24/09/2020 6:50" />
-    <option name="LAST_COMMIT_MESSAGE" value="24/09/2020 6:50" />
+    <MESSAGE value="RattingSeeder" />
+    <option name="LAST_COMMIT_MESSAGE" value="RattingSeeder" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="484" y="270" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600985324349">
-      <screen x="0" y="0" width="1680" height="1050" />
+    <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1600986183262">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="332" y="527" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600942106346" />
     <state x="484" y="270" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1680.1050@0.0.1680.1050" timestamp="1600985324349" />
-    <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.981@0.23.1680.981" timestamp="1600948561944" />
+    <state x="484" y="275" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.23.1680.981@0.23.1680.981" timestamp="1600986183262" />
     <state x="364" y="957" key="#com.jetbrains.php.lang.intentions.PhpImportClassDialog#" timestamp="1600934154496">
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
@@ -215,13 +255,18 @@
       <screen x="0" y="0" width="1152" height="2048" />
     </state>
     <state x="85" y="663" key="SettingsEditor/0.0.1152.2048/1152.112.2048.1152@0.0.1152.2048" timestamp="1600945536966" />
-    <state x="176" y="764" key="Vcs.Push.Dialog.v2" timestamp="1600955444795">
-      <screen x="0" y="0" width="1152" height="2048" />
+    <state x="257" y="389" key="Vcs.Push.Dialog.v2" timestamp="1600986120192">
+      <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="176" y="764" key="Vcs.Push.Dialog.v2/0.0.1152.2048/1152.135.2048.1129@0.0.1152.2048" timestamp="1600955444795" />
+    <state x="257" y="389" key="Vcs.Push.Dialog.v2/0.23.1680.981@0.23.1680.981" timestamp="1600986120192" />
     <state x="658" y="204" width="604" height="735" key="find.popup" timestamp="1600857004709">
       <screen x="0" y="23" width="1680" height="981" />
     </state>
     <state x="658" y="204" width="604" height="735" key="find.popup/0.23.1680.981@0.23.1680.981" timestamp="1600857004709" />
+    <state x="351" y="239" width="670" height="676" key="search.everywhere.popup" timestamp="1600986956189">
+      <screen x="0" y="23" width="1680" height="981" />
+    </state>
+    <state x="351" y="239" width="670" height="676" key="search.everywhere.popup/0.23.1680.981@0.23.1680.981" timestamp="1600986956189" />
   </component>
 </project>

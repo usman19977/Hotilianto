@@ -33,7 +33,7 @@
                                     @if($i>5)
                                         @break(0);
                                     @endif
-                                        <i class="icon_star" style="color: @if($rattings['ratting_round_off']<3) yellow @else green @endif"></i>
+                                        <i class="icon_star" style="color: @if($rattings['ratting_round_off']<3) orange @else green @endif"></i>
                                 @endfor
 
                                 @if(5-$rattings['ratting_round_off'] > 0)
@@ -159,59 +159,42 @@
                             <!-- /row -->
                         </div>
 
-                        <div class="reviews-container col-12" >
+                        <div class="reviews-container" >
 
-                            <div class="review-box clearfix ">
+                            @foreach($data[0]['rattings'] as $ratting)
+                                <div class="review-box clearfix ">
 
-                                <div class="rev-content">
-                                    <div class="rating">
-                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                                    </div>
-                                    <div class="rev-info">
-                                        Admin – April 03, 2016:
-                                    </div>
-                                    <div class="rev-text">
-                                        <p>
-                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
-                                        </p>
+                                    <div class="rev-content">
+
+
+                                        <div class="rating">
+                                            @for($i= 1;$i<=$ratting['value'];$i++)
+                                                @if($i>5)
+                                                    @break(0);
+                                                @endif
+                                                <i class="icon_star" style="color: @if($ratting['value']<3) orange @else green @endif"></i>
+                                            @endfor
+
+                                            @if(5-$ratting['value'] > 0)
+                                                @for($i= 1;$i<=5-$ratting['value'];$i++)
+                                                    <i class="icon_star" style="color: gainsboro"></i>
+                                                @endfor
+                                            @endif
+
+                                        </div>
+                                        <div class="rev-info">
+                                            {{$ratting['person_name']}} – {{$ratting['created_at']->format('l jS \\of F Y h:i:s A')}}
+                                        </div>
+                                        <div class="rev-text">
+                                            <p>
+                                              {{$ratting['person_review']}}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!-- /review-box -->
-                            <div class="review-box clearfix">
+                            @endforeach
 
-                                <div class="rev-content">
-                                    <div class="rating">
-                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                                    </div>
-                                    <div class="rev-info">
-                                        Ahsan – April 01, 2016:
-                                    </div>
-                                    <div class="rev-text">
-                                        <p>
-                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /review-box -->
-                            <div class="review-box clearfix">
 
-                                <div class="rev-content">
-                                    <div class="rating">
-                                        <i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star voted"></i><i class="icon_star"></i>
-                                    </div>
-                                    <div class="rev-info">
-                                        Sara – March 31, 2016:
-                                    </div>
-                                    <div class="rev-text">
-                                        <p>
-                                            Sed eget turpis a pede tempor malesuada. Vivamus quis mi at leo pulvinar hendrerit. Cum sociis natoque penatibus et magnis dis
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- /review-box -->
                         </div>
                         <!-- /review-container -->
                     </section>
@@ -220,36 +203,34 @@
 
                     <div class="add-review">
                         <h5>Leave a Review</h5>
-                        <form>
+                        <form action="{{route('review.store')}}" method="post"  id="reviewForm">
+                            {{ csrf_field()}}
+                            <input type="hidden" name="halls_id" value="{{$data[0]['id']}}" >
                             <div class="row">
                                 <div class="form-group col-md-6">
                                     <label>Name and Lastname *</label>
-                                    <input type="text" name="name_review" id="name_review" placeholder="" class="form-control">
+                                    <input type="text" required name="person_name" id="person_name" placeholder="" class="form-control">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Email *</label>
-                                    <input type="email" name="email_review" id="email_review" class="form-control">
+                                    <input type="email" required name="person_email" id="person_email" class="form-control">
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Rating </label>
                                     <div class="custom-select-form">
-                                        <select name="rating_review" id="rating_review" class="wide">
+                                        <select name="value" id="value" class="wide">
                                             <option value="1">1 (lowest)</option>
                                             <option value="2">2</option>
                                             <option value="3">3</option>
                                             <option value="4">4</option>
-                                            <option value="5" selected="">5 (medium)</option>
-                                            <option value="6">6</option>
-                                            <option value="7">7</option>
-                                            <option value="8">8</option>
-                                            <option value="9">9</option>
-                                            <option value="10">10 (highest)</option>
+                                            <option value="5" selected="">5 (Higgest)</option>
+
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group col-md-12">
                                     <label>Your Review</label>
-                                    <textarea name="review_text" id="review_text" class="form-control" style="height:130px;"></textarea>
+                                    <textarea required name="review_text" id="review_text" class="form-control" style="height:130px;"></textarea>
                                 </div>
                                 <div class="form-group col-md-12 add_top_20 add_bottom_30">
                                     <input type="submit" value="Submit" class="btn_1" id="submit-review">
@@ -307,5 +288,22 @@
         <!-- /container -->
 
     </main>
+<script>
+    $(document).on('submit', '[id^=reviewForm]', function (e) {
+        e.preventDefault();
+        var data = $(this).serialize();
+        swal({
+            title: "Are you sure?",
+            text: "Do you want to Send this email",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonText: "Yes, send it!",
+            cancelButtonText: "No, cancel pls!",
+        }).then(function () {
+            $('#form').submit();
+        });
+        return false;
+    });
+</script>
 @endsection
 

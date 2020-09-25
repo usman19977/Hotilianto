@@ -35,6 +35,17 @@ class Ratting extends Controller
     public function store(Request $request)
     {
         //
+        $review = new \App\Models\Ratting();
+        $review->halls_id = $request->halls_id;
+        $review->person_name = $request->person_name;
+        $review->person_email = $request->person_email;
+        $review->person_review = $request->review_text;
+
+        $review->status = 0;
+        $review->value = $request->value;
+        $review->save();
+       return  redirect('hall/'.$request->halls_id);
+
     }
 
     /**
