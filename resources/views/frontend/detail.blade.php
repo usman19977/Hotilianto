@@ -1,7 +1,11 @@
 @extends('frontend.layouts.master')
 @section('content')
     <main>
-        <div class="hero_in hotels_detail">
+        <div class="hero_in hotels_detail"
+        style="background:url({{
+    asset($data[0]['photos'][0]->path)
+}}) center center no-repeat;-webkit-background-size:cover;-moz-background-size:cover;-o-background-size:cover;background-size:cover"
+        >
             <div class="wrapper">
 				<span class="magnific-gallery">
 				 @foreach($data[0]['photos'] as $photo)
@@ -42,10 +46,6 @@
                                     @endfor
                                 @endif
 
-{{--                                <i class="icon_star"></i>--}}
-{{--                                <i class="icon_star"></i>--}}
-{{--                                <i class="icon_star"></i>--}}
-{{--                                <i class="icon_star"></i>--}}
                             </div>
                             <h1>{{$data[0]['name']}}</h1>
                             <a class="address" href="https://maps.google.com/?q={{$data[0]['address']}}">{{$data[0]['address']}}</a>
@@ -76,10 +76,7 @@
                                 <td>Price per person</td>
                                 <td>{{$data[0]['price_per_guest']}} RS</td>
                             </tr>
-{{--                            <tr>--}}
-{{--                                <td>Price per menu</td>--}}
-{{--                                <td>{{$data[0]['menu']->per_head_rate}} RS</td>--}}
-{{--                            </tr>--}}
+
                             <tr>
                                 <td>Capacity</td>
                                 <td>{{$data[0]['guest_range']}} Persons</td>
@@ -203,7 +200,7 @@
 
                     <div class="add-review">
                         <h5>Leave a Review</h5>
-                        <form action="{{route('review.store')}}" method="post"  id="reviewForm">
+                        <form action="{{route('publicReviewPost')}}" method="post"  id="reviewForm">
                             {{ csrf_field()}}
                             <input type="hidden" name="halls_id" value="{{$data[0]['id']}}" >
                             <div class="row">
@@ -244,13 +241,14 @@
                 <aside class="col-lg-4" id="sidebar">
                     <div class="box_detail booking">
                         <div class="price">
-                            <span>{{$data[0]['price_per_guest']}} RS <small>person</small></span>
+                            <span>{{$data[0]['price_per_guest']}} PKR <small>person</small></span>
                             <div class="score"><span><em>{{count($data[0]['rattings'])}} Reviews</em></span><strong>{{$rattings['ratting']}}</strong></div>
                         </div>
 
-                        <div class="form-group" id="input-dates">
-                            <input class="form-control" type="text" name="dates" placeholder="When..">
-                            <i class="icon_calendar"></i>
+
+                        <input class="date form-control " type="text" name="date_requested" placeholder="Select Date">
+                        <div style="height: 10px">
+
                         </div>
 
                         <div class="dropdown">
@@ -274,10 +272,26 @@
                                 </div>
                             </div>
                         </div>
+
                         <!-- /dropdown -->
+                        @if(Auth::check())
+
+                            @if(Auth::user()->roles[0]->name == 'administrator')
+
+                                <li><a href="/dashboard" class="btn_add">Dashboard</a></li>
+                            @elseif(Auth::user()->roles[0]->name == 'manager')
+                                <li><a href="/dashboard" class="btn_add">Dashboard</a></li>
+                            @elseif(Auth::user()->roles[0]->name == 'user')
+                                <button class="add_top_30 btn_1 full-width purchase get-qoute">GET QOUTE</button>
+                            @endif
+                        @else
+                            <a href="/login" >
+                            <button class="add_top_30 btn_1 full-width purchase ">Login</button>
+                            </a>
+
+                        @endif
 
 
-                        <a href="/checkout" class=" add_top_30 btn_1 full-width purchase">Purchase</a>
                         <div class="text-center"><small>No money charged in this step</small></div>
                     </div>
 
@@ -288,22 +302,85 @@
         <!-- /container -->
 
     </main>
-<script>
-    $(document).on('submit', '[id^=reviewForm]', function (e) {
-        e.preventDefault();
-        var data = $(this).serialize();
-        swal({
-            title: "Are you sure?",
-            text: "Do you want to Send this email",
-            type: "warning",
-            showCancelButton: true,
-            confirmButtonText: "Yes, send it!",
-            cancelButtonText: "No, cancel pls!",
-        }).then(function () {
-            $('#form').submit();
+    <script type="text/javascript">
+        $('.date').datepicker({
+            format: 'mm/dd/yyyy'
         });
-        return false;
-    });
-</script>
+    </script>
+
+    <script>
+        $('.get-qoute').on('click', function (event) {
+            var jobs = {!! json_encode($data) !!};
+            console.log(jobs[0]['price_per_guest']);
+            var pricePerGuest = jobs[0]['price_per_guest'];
+            var total_guests = $('#qty_total').text();
+            var amount = parseInt(total_guests) * pricePerGuest;
+
+            var data_req = $('.date').val();
+            event.preventDefault();
+            const url = $(this).attr('href');
+            swal({
+                title: 'Are you sure?',
+                text: 'Price of the booking will be '  +amount+ '  PKR !',
+                icon: 'info',
+                buttons: ["Cancel", "Send Booking Request!"],
+            }).then(function(value) {
+
+                if(total_guests <= 0 ){
+                    swal({
+                        title: 'Select Guest',
+                        text: 'Guest quantity must be greater than 0 ',
+                        icon: 'warning',
+                        buttons: [ "OK!"],
+                    })
+                }
+                else {
+                    if (value) {
+                        var formData = new FormData();
+                        formData.append("_token", "{{ csrf_token() }}");
+                        formData.append("hall_id","{{$data[0]['id']}}");
+                        formData.append("guest_qty",total_guests);
+                        formData.append("date_requested",data_req);
+                        formData.append('_method', 'POST')
+
+                        $.ajax({
+                            headers: {
+                                'X-CSRF-TOKEN': "{{ csrf_token() }}"
+                            },
+                            url: '/user/bookings',
+                            data: formData,
+                            contentType: false,
+                            processData: false,
+                            type: 'POST',
+                            success: function ( data ) {
+                                if(data['status'] == 200){
+                                    swal({
+                                        title: 'Booking is Placed',
+                                        text: 'Your Booking ID is : '+data['booking_id'],
+                                        icon: 'success',
+                                        buttons: [ "OK!"],
+                                    })
+                                }
+                                else {
+                                    swal({
+                                        title: 'Try again',
+                                        text: 'Internal server error try again',
+                                        icon: 'danger',
+                                        buttons: ["OK!"],
+                                    })
+                                }
+
+                                console.log(data);
+                                // alert( json.stringify(data) );
+                            }
+                        });
+                        // window.location.href = url;
+                    }
+                }
+
+            });
+        });
+    </script>
 @endsection
+
 

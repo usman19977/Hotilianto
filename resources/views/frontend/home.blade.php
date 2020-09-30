@@ -8,13 +8,14 @@
                     <p>
                         Discover top rated banquets, near by you & get according to your range
                     </p>
-                    <form method="post" action="grid-listings-filterscol.html">
+                    <form method="get" action="/search">
                         <div class="row no-gutters custom-search-input-2">
                             <div class="col-lg-4">
                                 <div class="form-group">
                                     <input
                                         class="form-control"
                                         type="text"
+                                        name="filter[name]"
                                         placeholder="What are you looking for..."
                                     />
                                     <i class="icon_search"></i>
@@ -22,7 +23,7 @@
                             </div>
                             <div class="col-lg-3">
                                 <div class="form-group">
-                                    <select class="wide" name="venue_type">
+                                    <select class="wide" name="filter[venuetype_id]">
 
                                         @foreach($data['venue_types'] as $venuetype)
                                             <option value="{{$venuetype->id}}">{{$venuetype->name}}</option>
@@ -33,7 +34,7 @@
                                 </div>
                             </div>
                             <div class="col-lg-3">
-                                <select class="wide" name="city">
+                                <select class="wide" name="filter[city_id]">
 
                                     @foreach($data['cities'] as $city)
                                         <option  value="{{$city->id}}">{{$city->name}}</option>
@@ -59,7 +60,7 @@
 
                     @foreach($data['venue_types'] as $venueType)
                         <li>
-                            <a href="grid-listings-filterscol.html">
+                            <a href="/search?filter[venuetype_id]={{$venueType->id}}">
                                 <i class="icon-restaurant"></i>
                                 <h3>{{$venueType->name}}</h3>
                             </a>
@@ -79,7 +80,7 @@
                 <span></span>
                 <h2>Famous Banquets</h2>
                 <p>Get Qoutes From Most Of Them</p>
-                <a href="grid-listings-filterscol.html">See all</a>
+                <a href="/search">See all</a>
             </div>
             <div class="row add_bottom_30">
                 @foreach($data['halls'] as $hall)
@@ -112,16 +113,16 @@
                     <div class="main_title_2">
                         <span><em></em></span>
                         <h2>How it Works</h2>
-                        <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+                        <p>Search what you need , place booking , banquet manager will call you</p>
                     </div>
                     <div class="row">
                         <div class="col-md-4">
                             <div class="box_how">
                                 <i class="pe-7s-search"></i>
-                                <h3>Search Locations</h3>
+                                <h3>Search Banquets</h3>
                                 <p>
-                                    An nec placerat repudiare scripserit, temporibus
-                                    complectitur at sea, vel ignota fierent eloquentiam id.
+                                    Search banquets according to your needs,
+                                    you can search by location , type , ratting , & by guest quantity.
                                 </p>
                                 <span></span>
                             </div>
@@ -129,10 +130,9 @@
                         <div class="col-md-4">
                             <div class="box_how">
                                 <i class="pe-7s-info"></i>
-                                <h3>View Location Info</h3>
+                                <h3>View Banquet Info</h3>
                                 <p>
-                                    An nec placerat repudiare scripserit, temporibus
-                                    complectitur at sea, vel ignota fierent eloquentiam id.
+                                  You can get location , photos , ratting , reviews , now you can place booking on some clicks by just providing date of occasion , & guest quantity
                                 </p>
                                 <span></span>
                             </div>
@@ -142,8 +142,8 @@
                                 <i class="pe-7s-like2"></i>
                                 <h3>Book, Reach or Call</h3>
                                 <p>
-                                    An nec placerat repudiare scripserit, temporibus
-                                    complectitur at sea, vel ignota fierent eloquentiam id.
+                                  After you place booking , banquet manager will check and approve that booking for you , you will be notified by  manager call ,
+                                    place booking get your function done in desired banquet now
                                 </p>
                             </div>
                         </div>
@@ -153,7 +153,14 @@
                         class="text-center add_top_30 wow bounceIn"
                         data-wow-delay="0.5s"
                     >
-                        <a href="account.html" class="btn_1 rounded">Register Now</a>
+             @if(\Illuminate\Support\Facades\Auth::check())
+                        <a href="/dashboard" class="btn_1 rounded">Track your queries</a>
+
+
+
+                        @else
+                            <a href="/login" class="btn_1 rounded">Register Now</a>
+                        @endif
                     </p>
                 </div>
                 <canvas id="hero-canvas" width="1920" height="1080"></canvas>

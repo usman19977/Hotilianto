@@ -26,7 +26,8 @@ class Hall extends Seeder
                 'user_id' => 2,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 1
+                'venuetype_id' => 1,
+                'ratting' => 2.3
             ],
             [   'name' => 'Mughal-e-Azam Banquet Complex',
                 'address' => 'Usman Rd, Aibak Block Garden Town, Lahore, Punjab 54000',
@@ -37,7 +38,8 @@ class Hall extends Seeder
                 'user_id' => 3,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 1
+                'venuetype_id' => 1,
+                'ratting' => 2.3
             ],
             [   'name' => 'Taj Mahal Banquet Hall',
                 'address' => 'Ferozepur Road, Abu Bakar Block Garden Town, Lahore, Punjab',
@@ -48,7 +50,8 @@ class Hall extends Seeder
                 'user_id' => 4,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 2
+                'venuetype_id' => 2,
+                'ratting' => 2.3
             ],
             [   'name' => 'Taj Banquets',
                 'address' => 'Executive Lodges Sector B Bahria Town, Lahore, Punjab',
@@ -59,7 +62,8 @@ class Hall extends Seeder
                 'user_id' => 5,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 2
+                'venuetype_id' => 2,
+                'ratting' => 2.3
             ],
             [   'name' => 'Al Raheem Banquets',
                 'address' => 'Block D State Life Phase 1 State Life, Lahore, Punjab',
@@ -70,7 +74,8 @@ class Hall extends Seeder
                 'user_id' => 6,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 3
+                'venuetype_id' => 3,
+                'ratting' => 2.3
             ],
             [   'name' => 'Lynx Banquets',
                 'address' => 'Muslim League (Q) House، 35 Sundar Das Road، Off Davis Road, near لاہور, 54000',
@@ -81,7 +86,8 @@ class Hall extends Seeder
                 'user_id' => 7,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 3
+                'venuetype_id' => 3,
+                'ratting' => 2.3
             ],
             [   'name' => 'Royal Banquet',
                 'address' => 'Royal Banquets, Near Attock Petrol Pump, Main Barki Rd, Paragon City, Lahore, Punjab 54000',
@@ -92,7 +98,8 @@ class Hall extends Seeder
                 'user_id' => 8,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 4
+                'venuetype_id' => 4,
+                'ratting' => 2.3
             ],
             [   'name' => 'Serene Banquets',
                 'address' => 'Paragon City, Lahore, Punjab',
@@ -103,7 +110,8 @@ class Hall extends Seeder
                 'user_id' => 9,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 4
+                'venuetype_id' => 4,
+                'ratting' => 2.3
             ],
             [   'name' => 'The Nishat Banquets',
                 'address' => 'Emporium، Abdul Haque Rd, Commercial Area Phase 2 Johar Town, Lahore, Punjab 54000',
@@ -114,7 +122,8 @@ class Hall extends Seeder
                 'user_id' => 10,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 5
+                'venuetype_id' => 5,
+                'ratting' => 2.3
             ],
             [   'name' => 'Liberty Castle',
                 'address' => '79 Main Boulevard Gulberg, Block D1 Block D 1 Gulberg III, Lahore, Punjab',
@@ -125,7 +134,8 @@ class Hall extends Seeder
                 'user_id' => 11,
                 'city_id' => 10,
                 'created_at' => '2020-09-22 00:00:00',
-                'venuetype_id' => 5
+                'venuetype_id' => 5,
+                'ratting' => 2.3
             ],
 
 

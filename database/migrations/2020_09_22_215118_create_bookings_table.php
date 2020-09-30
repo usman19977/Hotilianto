@@ -17,6 +17,9 @@ class CreateBookingsTable extends Migration
             $table->id();
             $table->integer('halls_id');
             $table->integer('users_id');
+            $table->integer('guest_qty');
+            $table->timestamp('date_requested');
+
             $table->integer('status');
             $table->softDeletes();
             $table->timestamps();

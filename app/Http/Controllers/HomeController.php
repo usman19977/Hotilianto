@@ -17,7 +17,7 @@ class HomeController extends Controller
     {
         //
 
-        $halls = hall::firstorfail()->orderBy('id','desc')->limit(20)->with(['photos','venuetype'])->get();
+        $halls = hall::firstorfail()->where(['status' => 1])->orderBy('id','desc')->limit(20)->with(['photos','venuetype'])->get();
         $venueTypes = VenueTypes::firstorFail()->orderBy('id','desc')->limit(5)->get();
         $cities = Cities::firstorFail()->orderBy('id','desc')->get();
 

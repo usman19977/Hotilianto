@@ -22,6 +22,8 @@ class CreateHallsTable extends Migration
             $table->string('details');
             $table->integer('status');
             $table->integer('user_id');
+            $table->double('ratting');
+            $table->bigInteger('details');
             $table->softDeletes();
             $table->timestamps();
         });

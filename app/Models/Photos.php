@@ -11,6 +11,7 @@ class Photos extends Model
     use HasFactory;
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    protected $fillable = ['path'];
     public  function halls(){
         return $this->belongsTo('App\Models\Hall','halls_id','id');
     }

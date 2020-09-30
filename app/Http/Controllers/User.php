@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class User extends Controller
 {
@@ -11,9 +12,29 @@ class User extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+
+
+
+
+    }
     public function index()
     {
         //
+//        $bookings = \App\Models\User::whereHas('roles', function ($q) {
+//        return $q->select(['name'])->get();
+//    })->with(['roles'])->get();
+        $bookings = \App\Models\User::with(['roles'])->get();
+//return $bookings;
+        return view('manager.users',
+            [
+            'data'=> $bookings,
+            'title' => 'Users',
+            'role' => Auth::user()->roles[0]->name
+        ]);
+
+
     }
 
     /**

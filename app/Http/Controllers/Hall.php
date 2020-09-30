@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Ammenties;
+use App\Models\Bookings;
+use App\Models\Photos;
+use App\Models\VenueTypes;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Hall extends Controller
 {
@@ -14,7 +19,12 @@ class Hall extends Controller
     public function index()
     {
         //
+        $hall =  \App\Models\hall::firstorfail()->orderBy('id','desc')->get();
 
+
+//return $hall;
+
+        return view('manager.myhalls',['data'=> $hall,'title' => 'My Halls','role' => Auth::user()->roles[0]->name]);
     }
 
     /**
@@ -24,7 +34,10 @@ class Hall extends Controller
      */
     public function create()
     {
-        //
+        $city = \App\Models\Cities::all();
+        $venueTypes = VenueTypes::all();
+
+        return view('manager.addlisting', ['cities' => $city,'venuw_types' => $venueTypes,'role' => Auth::user()->roles[0]->name ]);
     }
 
     /**
@@ -35,7 +48,47 @@ class Hall extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $reqInstance = $request->all();
+
+        $user = \App\Models\User::findorfail(Auth::user()->id);
+        $hall = new \App\Models\hall([
+            'name' => $reqInstance['name'],
+            'address' => $reqInstance['address'],
+            'guest_range' => $reqInstance['guest_range'],
+            'city_id' =>  $reqInstance['city_id'],
+            'venuetype_id' => $reqInstance['venuetype_id'],
+            'price_per_guest' => $reqInstance['price_per_guest'],
+            'details' => $reqInstance['details'],
+            'status' => 0,
+            'ratting' => 0.0
+            ]);
+
+       $hallinserted =  $user->halls()->save($hall);
+       if(count($reqInstance['menuitem'] ) > 0){
+           foreach ($reqInstance['menuitem'] as $amenti){
+               $amentitoadd = new Ammenties(['name' => $amenti]);
+               $hallinserted->ammenties()->save($amentitoadd);
+           }
+       }
+       if($request->hasfile('photos'))
+        {   $i = 1;
+            foreach($request->file('photos') as $file)
+            { $i++;
+                $name = time().$i.'.'.$file->extension();
+                $file->move(public_path().'/hallimages/', $name);
+            $photo = new Photos(['path' => '/hallimages/'.$name]);
+                $hallinserted->photos()->save($photo);
+            }
+        }
+
+
+
+
+
+
+
+        return redirect()->back();
+
     }
 
     /**
@@ -47,15 +100,20 @@ class Hall extends Controller
     public function show($id)
     {
         //
-        $hall = \App\Models\hall::find($id)->with(['photos','venuetype','city','ammenties','rattings',])->get();
 
-        $ratting =  \App\Models\Ratting::where([['halls_id','=',$id],])->selectRaw('SUM(value)/COUNT(halls_id) AS avg_rating')->first()->avg_rating;
-        $rattingfnf =  number_format((float)$ratting, 1, '.', '');
+        $hall = \App\Models\hall::firstorfail()->where(['id'=>$id,'status' => 1])->with(['photos','venuetype','city','ammenties','rattings'=> function($q){
+           return  $q->where(['status'=>1]);
+        },])->get();
+
+        $ratting =  \App\Models\Ratting::where(['halls_id'=>$id,'status'=>1])->selectRaw('SUM(value)/COUNT(halls_id) AS avg_rating')->first()->avg_rating;
+
+        $rattingfnf = number_format((float)$ratting, 1, '.', '');
         $ratting_1 = 0;
         $ratting_2 = 0;
         $ratting_3 = 0;
         $ratting_4 = 0;
         $ratting_5 = 0;
+
         foreach ($hall[0]->rattings as $ratting){
           switch ($ratting->value){
               case 1 :
@@ -126,7 +184,10 @@ class Hall extends Controller
      */
     public function edit($id)
     {
-        //
+
+        $city = \App\Models\Cities::all();
+        $venueTypes = VenueTypes::all();
+        return view('manager.editlisting', ['cities' => $city,'venuw_types' => $venueTypes ]);
     }
 
     /**
@@ -150,5 +211,38 @@ class Hall extends Controller
     public function destroy($id)
     {
         //
+    }
+
+
+    public function showManagerHalls()
+    {
+
+        $hall =  \App\Models\hall::firstorfail()->where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
+
+
+//return $hall;
+
+        return view('manager.myhalls',['data'=> $hall,'title' => 'My Halls','role' => Auth::user()->roles[0]->name]);
+
+    }
+
+    public function approve(Request $request, $id)
+    {
+        $resource = new \App\Models\hall();
+        $resource->exists = true;
+        $resource->id = $id; //already exists in database.
+        $resource->status = 1;
+        $resource->save();
+        return redirect()->back();
+    }
+    public function reject(Request $request, $id)
+    {
+        //
+        $resource = new \App\Models\Hall();
+        $resource->exists = true;
+        $resource->id = $id; //already exists in database.
+        $resource->status = 2;
+        $resource->save();
+        return redirect()->back();
     }
 }

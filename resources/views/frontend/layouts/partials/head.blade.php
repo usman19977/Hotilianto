@@ -11,7 +11,7 @@
     />
     <meta name="author" content="Ansonika" />
     <title>
-        Hotilianto
+        @yield('title','Hotilianto')
     </title>
 
     <!-- Favicons-->
@@ -28,6 +28,10 @@
 
 
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/js/bootstrap-datepicker.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link href="{{ asset('css/style.css') }}" rel="stylesheet" />
     <link href="{{ asset('css/vendors.css') }}" rel="stylesheet" />
 

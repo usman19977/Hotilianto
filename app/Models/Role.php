@@ -11,6 +11,8 @@ class Role extends Model
     use HasFactory;
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    protected $fillable = ['user_id','role_id'];
+    protected $hidden = ['pivot'];
     public  function users(){
         return $this->belongsToMany('App\Models\User');
     }

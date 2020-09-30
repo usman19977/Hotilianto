@@ -11,6 +11,7 @@ class Ammenties extends Model
     use HasFactory;
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    protected $fillable = ['name'];
     public  function halls(){
         return $this->belongsTo('App\Models\Hall','halls_id','id');
     }

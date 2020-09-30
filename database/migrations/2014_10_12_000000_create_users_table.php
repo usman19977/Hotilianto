@@ -17,12 +17,14 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
-            $table->integer('cnic');
-            $table->integer('mobile_number');
+            $table->bigInteger('cnic');
+            $table->bigInteger('mobile_number');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->softDeletes();
             $table->rememberToken();
+            $table->foreignId('current_team_id')->nullable();
+            $table->text('profile_photo_path')->nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
